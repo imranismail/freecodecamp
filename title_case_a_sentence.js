@@ -9,8 +9,7 @@ function titleCase(str) {
     return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();
   });
 
-  console.log(str);
   return str;
 }
 
-titleCase("I'm a little tea pot");
+module.exports.titleCase = titleCase;
