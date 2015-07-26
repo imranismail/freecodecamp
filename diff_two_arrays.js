@@ -3,12 +3,34 @@
  * @param  {Array}
  * @return {Array}
  */
-function diff(a, b) {
-  var result = a.filter(function(e) {
-    return b.indexOf(e) === -1;
-  }).concat(b.filter(function(e) {
-    return a.indexOf(e) === -1;
-  }));
+function diff(arr1, arr2) {
+  var values = {};
+  arr1.map(function(value) {
+    values[value] = {
+      id: value,
+      unique: true
+    };
+  });
+  arr2.map(function(value) {
+    if (values[value] !== undefined) {
+      values[value] = {
+        id: value,
+        unique: false
+      };
+    } else {
+      values[value] = {
+        id: value,
+        unique: true
+      };
+    }
+  });
+
+  var result = [];
+  for (var key in values) {
+    if (values[key].unique) {
+      retval.push(values[key].id);
+    }
+  }
 
   console.log(result);
   return result;
