@@ -4,6 +4,8 @@
  * @return {Array}
  */
 function chunk(arr, size) {
+  "use strict";
+
   var arrB = [];
   while (arr.length > 0) {
     arrB.push(arr.splice(0, size));

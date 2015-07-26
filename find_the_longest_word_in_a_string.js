@@ -3,16 +3,19 @@
  * @return {Number}
  */
 function findLongestWord(str) {
+  "use strict";
+
   var words = str.split(" ");
-  var long_word = "";
+  var longWord = "";
 
   words.forEach(function(word) {
-    if (word.length > long_word.length) {
-      long_word = word;
+    if (word.length > longWord.length) {
+      longWord = word;
     }
   });
 
-  return long_word.length;
+  console.log(longWord);
+  return longWord.length;
 }
 
-findLongestWord('The quick brown fox jumped over the lazy dog');
+findLongestWord("The quick brown fox jumped over the lazy dog");

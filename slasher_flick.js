@@ -4,6 +4,8 @@
  * @return {Array}
  */
 function slasher(arr, howMany) {
+  "use strict";
+
   arr.splice(0, howMany);
 
   console.log(arr);

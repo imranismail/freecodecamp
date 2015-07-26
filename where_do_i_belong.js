@@ -4,6 +4,8 @@
  * @return {Number}
  */
 function where(arr, num) {
+  "use strict";
+
   var result;
   arr.sort();
   for (var i = 0; i < arr.length; i++) {

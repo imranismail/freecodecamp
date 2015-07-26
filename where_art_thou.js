@@ -4,6 +4,8 @@
  * @return {Collection}
  */
 function where(collection, source) {
+  "use strict";
+
   var keys = Object.keys(source);
   var result = collection.filter(function(obj) {
     return keys.some(function(key) {
@@ -16,15 +18,15 @@ function where(collection, source) {
 }
 
 where([{
-  first: 'Romeo',
-  last: 'Montague'
+  first: "Romeo",
+  last: "Montague"
 }, {
-  first: 'Mercutio',
+  first: "Mercutio",
   last: null
 }, {
-  first: 'Tybalt',
-  last: 'Capulet'
+  first: "Tybalt",
+  last: "Capulet"
 }], {
-  first: 'Romeo',
-  last: 'Capulet'
+  first: "Romeo",
+  last: "Capulet"
 });

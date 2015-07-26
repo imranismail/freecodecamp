@@ -3,6 +3,8 @@
  * @return {Number}
  */
 function factorialize(num) {
+  "use strict";
+
   if (num === 0) {
     return 1;
   }

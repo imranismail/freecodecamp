@@ -4,6 +4,8 @@
  * @return {Array}
  */
 function diff(arr1, arr2) {
+  "use strict";
+
   var values = {};
 
   arr1.map(function(value) {

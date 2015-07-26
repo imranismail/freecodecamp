@@ -3,12 +3,14 @@
  * @return {Number}
  */
 function mutation(arr) {
-  var arrA = arr[0].toLowerCase().split('');
-  var arrB = arr[1].toLowerCase().split('');
+  "use strict";
+
+  var arrA = arr[0].toLowerCase().split("");
+  var arrB = arr[1].toLowerCase().split("");
   var counter = 0;
 
   arrB.forEach(function(val) {
-    if (arrA.indexOf(val) != -1) {
+    if (arrA.indexOf(val) !== -1) {
       counter++;
     }
   });
@@ -19,4 +21,4 @@ function mutation(arr) {
   return result;
 }
 
-mutation(['hello', 'hey']);
+mutation(["hello", "hey"]);

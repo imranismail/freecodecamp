@@ -4,11 +4,13 @@
  * @return {String}
  */
 function repeat(str, num) {
+  "use strict";
+
   var result = "";
   if (num < 0) {
     return result;
   } else {
-    for (i = 0; i < num; i++) {
+    for (var i = 0; i < num; i++) {
       result += str;
     }
   }
@@ -17,4 +19,4 @@ function repeat(str, num) {
   return result;
 }
 
-repeat('abc', 3);
+repeat("abc", 3);

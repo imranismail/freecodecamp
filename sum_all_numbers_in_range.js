@@ -3,6 +3,8 @@
  * @return {Number}
  */
 function sumAll(arr) {
+  "use strict";
+
   var maxNum = Math.max(arr[0], arr[1]);
   var minNum = Math.min(arr[0], arr[1]);
   var sum = 0;

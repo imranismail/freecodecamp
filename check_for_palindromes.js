@@ -3,10 +3,12 @@
  * @return {Boolean}
  */
 function palindrome(str) {
-  str = str.replace(/[^\w]/g, '').toLowerCase();
-  var rev_str = str.split('').reverse().join('');
+  "use strict";
+  str = str.replace(/[^\w]/g, "").toLowerCase();
+  var revStr = str.split("").reverse().join("");
 
-  return rev_str === str;
+  console.log(revStr);
+  return revStr === str;
 }
 
 palindrome("eye");
