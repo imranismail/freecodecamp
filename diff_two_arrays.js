@@ -5,12 +5,14 @@
  */
 function diff(arr1, arr2) {
   var values = {};
+
   arr1.map(function(value) {
     values[value] = {
       id: value,
       unique: true
     };
   });
+
   arr2.map(function(value) {
     if (values[value] !== undefined) {
       values[value] = {
@@ -26,9 +28,10 @@ function diff(arr1, arr2) {
   });
 
   var result = [];
+
   for (var key in values) {
     if (values[key].unique) {
-      retval.push(values[key].id);
+      result.push(values[key].id);
     }
   }
 
