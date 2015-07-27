@@ -6,38 +6,29 @@
 function diff(arr1, arr2) {
   "use strict";
 
-  var values = {};
+  var
+    lookupList = {},
+    result = [],
+    jointArray = arr1.concat(arr2);
 
-  arr1.map(function(value) {
-    values[value] = {
-      id: value,
-      unique: true
-    };
-  });
-
-  arr2.map(function(value) {
-    if (values[value] !== undefined) {
-      values[value] = {
-        id: value,
-        unique: false
+  jointArray.forEach(function(element) {
+    if (lookupList[element] === undefined) {
+      lookupList[element] = {
+        unique: true
       };
     } else {
-      values[value] = {
-        id: value,
-        unique: true
+      lookupList[element] = {
+        unique: false
       };
     }
   });
 
-  var result = [];
-
-  for (var key in values) {
-    if (values[key].unique) {
-      result.push(values[key].id);
+  for (var item in lookupList) {
+    if (lookupList[item].unique) {
+      result.push(item);
     }
   }
 
-  console.log(result);
   return result;
 }
 
