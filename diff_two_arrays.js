@@ -22,12 +22,12 @@ diff([1, 2, 3, 5], [1, 2, 3, 4, 5]);
  * @param  {Array} b array A
  * @return {Array}   unique elements between the two arrays
  */
-function diff(arr1, arr2) {
+function diff(a, b) {
   "use strict";
   var
     lookupList = {},
     result = [],
-    jointArray = arr1.concat(arr2);
+    jointArray = a.concat(b);
 
   jointArray.forEach(function(element) {
     if (lookupList[element] === undefined) {
