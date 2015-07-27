@@ -15,8 +15,7 @@ function translate(str) {
 
   if (cRegex.test(str)) {
     match = str.match(cRegex);
-    str = str.substring(match[0].length, str.length);
-    result = str + match[0] + cSuffix;
+    result = str.slice(match[0].length) + match[0] + cSuffix;
   } else if (vRegex.test(str)) {
     result = str + vSuffix;
   }
