@@ -14,10 +14,12 @@ function diff(arr1, arr2) {
   jointArray.forEach(function(element) {
     if (lookupList[element] === undefined) {
       lookupList[element] = {
+        value: element,
         unique: true
       };
     } else {
       lookupList[element] = {
+        value: element,
         unique: false
       };
     }
@@ -25,10 +27,11 @@ function diff(arr1, arr2) {
 
   for (var item in lookupList) {
     if (lookupList[item].unique) {
-      result.push(item);
+      result.push(lookupList[item].value);
     }
   }
 
+  console.log(result);
   return result;
 }
 
