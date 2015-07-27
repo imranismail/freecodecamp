@@ -5,9 +5,16 @@
  */
 function fearNotLetter(str) {
   "use strict";
-  var result;
+  var
+    result,
+    prevCharcode,
+    expectedPrevCharcode;
+
   for (var i = 1; i < str.length; i++) {
-    if (str.charCodeAt(i) - 1 !== str.charCodeAt(i - 1)) {
+    prevCharcode = str.charCodeAt(i) - 1;
+    expectedPrevCharcode = str.charCodeAt(i - 1);
+
+    if (prevCharcode !== expectedPrevCharcode) {
       result = String.fromCharCode(str.charCodeAt(i) - 1);
     }
   }
