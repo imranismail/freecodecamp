@@ -25,7 +25,6 @@ function convert(num) {
     }
   }
 
-  console.log(result);
   return result;
 }
 

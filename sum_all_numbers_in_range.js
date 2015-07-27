@@ -13,7 +13,6 @@ function sumAll(arr) {
     sum += i;
   }
 
-  console.log(sum);
   return sum;
 }
 

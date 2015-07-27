@@ -4,11 +4,7 @@
  */
 function reverseString(str) {
   "use strict";
-
-  var arr = str.split("").reverse().join("");
-
-  console.log(arr);
-  return arr;
+  return str.split("").reverse().join("");
 }
 
 reverseString("hello");

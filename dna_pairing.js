@@ -6,7 +6,6 @@
 function pair(str) {
   "use strict";
   var
-    result,
     toBePaired = str.split(""),
     lookupTable = {
       G: "C",
@@ -15,16 +14,13 @@ function pair(str) {
       T: "A"
     };
 
-  result = toBePaired.map(function(element) {
+  return toBePaired.map(function(element) {
     if (lookupTable.hasOwnProperty(element)) {
       return [element, lookupTable[element]];
     } else {
       return [element, "No pairing element found"];
     }
   });
-
-  console.log(result);
-  return result;
 }
 
 pair("CTAGB");

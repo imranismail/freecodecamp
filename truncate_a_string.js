@@ -5,7 +5,6 @@ function truncate(str, num) {
     str = str.slice(0, num - 3) + "...";
   }
 
-  console.log(str);
   return str;
 }
 

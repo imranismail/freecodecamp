@@ -7,6 +7,7 @@ function repeat(str, num) {
   "use strict";
 
   var result = "";
+
   if (num < 0) {
     return result;
   } else {
@@ -15,7 +16,6 @@ function repeat(str, num) {
     }
   }
 
-  console.log(result);
   return result;
 }
 

@@ -4,13 +4,9 @@
  */
 function largestOfFour(arr) {
   "use strict";
-
-  arr = arr.map(function(subArr) {
+  return arr.map(function(subArr) {
     return Math.max.apply(null, subArr);
   });
-
-  console.log(arr);
-  return arr;
 }
 
 largestOfFour([

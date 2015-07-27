@@ -10,16 +10,13 @@ var $ = require("./title_case_a_sentence");
 function replace(str, before, after) {
   "use strict";
   var searchTerm = new RegExp(before, "g");
-  var final = str.replace(searchTerm, function(match) {
+  return str.replace(searchTerm, function(match) {
     var replacement = after;
     if (match[0] === match[0].toUpperCase()) {
       replacement = $.titleCase(after);
     }
     return replacement;
   });
-
-  console.log(final);
-  return final;
 }
 
 replace("A quick brown fox Jumped over the lazy dog", "Jumped", "leaped");

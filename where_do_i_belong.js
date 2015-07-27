@@ -5,8 +5,8 @@
  */
 function where(arr, num) {
   "use strict";
-
   var result;
+
   arr.sort();
   for (var i = 0; i < arr.length; i++) {
     if (num > arr[i] && num < arr[i + 1]) {
@@ -19,7 +19,6 @@ function where(arr, num) {
     }
   }
 
-  console.log(result);
   return result;
 }
 

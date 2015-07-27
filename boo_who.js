@@ -11,7 +11,6 @@ function boo(bool) {
     result = true;
   }
 
-  console.log(result);
   return result;
 }
 

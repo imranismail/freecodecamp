@@ -6,13 +6,14 @@
 function chunk(arr, size) {
   "use strict";
 
-  var arrB = [];
+  var result = [];
+
   while (arr.length > 0) {
-    arrB.push(arr.splice(0, size));
+    result.push(arr.splice(0, size));
   }
 
-  console.log(arrB);
-  return arrB;
+  console.log(result);
+  return result;
 }
 
 chunk(['a', 'b', 'c', 'd'], 2);

@@ -7,14 +7,11 @@ function where(collection, source) {
   "use strict";
 
   var keys = Object.keys(source);
-  var result = collection.filter(function(obj) {
+  return collection.filter(function(obj) {
     return keys.some(function(key) {
       return obj[key] === source[key];
     });
   });
-
-  console.log(result);
-  return result;
 }
 
 where([{

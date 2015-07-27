@@ -15,10 +15,7 @@ function mutation(arr) {
     }
   });
 
-  var result = arrB.length === counter;
-
-  console.log(result);
-  return result;
+  return arrB.length === counter;
 }
 
 mutation(["hello", "hey"]);
