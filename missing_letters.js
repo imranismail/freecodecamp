@@ -7,14 +7,14 @@ function fearNotLetter(str) {
   "use strict";
   var
     result,
-    prevCharcode,
-    expectedPrevCharcode;
+    prevCharCode,
+    expectedPrevCharCode;
 
   for (var i = 1; i < str.length; i++) {
-    prevCharcode = str.charCodeAt(i) - 1;
-    expectedPrevCharcode = str.charCodeAt(i - 1);
+    prevCharCode = str.charCodeAt(i) - 1;
+    expectedPrevCharCode = str.charCodeAt(i - 1);
 
-    if (prevCharcode !== expectedPrevCharcode) {
+    if (prevCharCode !== expectedPrevCharCode) {
       result = String.fromCharCode(str.charCodeAt(i) - 1);
     }
   }
