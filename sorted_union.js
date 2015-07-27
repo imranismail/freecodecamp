@@ -15,3 +15,35 @@ function unite(arr1, arr2, arr3) {
 }
 
 unite([1, 3, 2], [1, [5]], [2, [4]]);
+
+
+
+/**
+ * Alternative solution
+ * @param  {Array} arr1
+ * @param  {Array} arr2
+ * @param  {[Array*]} arr3
+ * @return {Array}      unique numbers sorted by their original order.
+ */
+function unite(arr1, arr2, arr3) {
+  var
+    result = [],
+    lookupTable = {},
+    args = [].concat.apply([], Array.prototype.slice.call(arguments));
+
+  for (var i = 0, id = 0; i < args.length; i++) {
+    if (lookupTable[args[i]] === undefined) {
+      lookupTable[id++] = {
+        value: args[i]
+      };
+    }
+  }
+
+  for (var key in lookupTable) {
+    result.push(lookupTable[key].value);
+  }
+
+  return result;
+}
+
+unite([1, 3, 2], [1, [5]], [2, [4]]);
