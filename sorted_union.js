@@ -33,14 +33,12 @@ function unite(arr1, arr2, arr3) {
 
   for (var i = 0, id = 0; i < args.length; i++) {
     if (lookupTable[args[i]] === undefined) {
-      lookupTable[id++] = {
-        value: args[i]
-      };
+      lookupTable[id++] = args[i];
     }
   }
 
   for (var key in lookupTable) {
-    result.push(lookupTable[key].value);
+    result.push(lookupTable[key]);
   }
 
   return result;
