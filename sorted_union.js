@@ -27,7 +27,6 @@ unite([1, 3, 2], [1, [5]], [2, [4]]);
  */
 function unite(arr1, arr2, arr3) {
   var
-    result = [],
     lookupTable = {},
     args = [].concat.apply([], Array.prototype.slice.call(arguments));
 
@@ -37,11 +36,9 @@ function unite(arr1, arr2, arr3) {
     }
   }
 
-  for (var key in lookupTable) {
-    result.push(lookupTable[key]);
-  }
-
-  return result;
+  return Object.keys(lookupTable).reduce(function(acc, key) {
+    return acc.concat([lookupTable[key]]);
+  }, []);
 }
 
 unite([1, 3, 2], [1, [5]], [2, [4]]);
