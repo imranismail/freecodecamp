@@ -43,18 +43,19 @@ function friendly(range) {
   const to    = new FriendlyDate(range[1]);
   const now   = new Date();
 
+  // Different year
   if(from.year != to.year)
     range = [`${from.humanizedMonth()} ${from.humanizedDay()}, ${from.year}`, `${to.humanizedMonth()} ${to.humanizedDay()}, ${to.year}`];
-
+  // Same year or below 12 months
   if(from.year == to.year || from.year == to.year - 1 && from.day != to.day)
     range = [`${from.humanizedMonth()} ${from.humanizedDay()}, ${from.year}`, `${to.humanizedMonth()} ${to.humanizedDay()}`];
-
+  // Below 12 months, with a different month
   if(from.year == to.year - 1 && from.month != to.month)
     range = [`${from.humanizedMonth()} ${from.humanizedDay()}`, `${to.humanizedMonth()} ${to.humanizedDay()}`];
-
+  // Same year and current year
   if(from.year == now.getUTCFullYear() && from.year == to.year)
     range = [`${from.humanizedMonth()} ${from.humanizedDay()}`, `${to.humanizedDay()}`];
-
+  // Same date
   if(from.year == to.year && from.month == to.month && from.day == to.day)
     range = [`${from.humanizedMonth()} ${from.humanizedDay()}, ${from.year}`];
 
