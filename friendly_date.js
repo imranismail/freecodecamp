@@ -43,20 +43,20 @@ function friendly(range) {
   const to    = new FriendlyDate(range[1]);
   const now   = new Date();
 
-  if(from.year != to.year || from.year == to.year - 1 && from.month != to.month && from.day != to.day)
+  if(from.year != to.year)
     range = [`${from.humanizedMonth()} ${from.humanizedDay()}, ${from.year}`, `${to.humanizedMonth()} ${to.humanizedDay()}, ${to.year}`];
 
-  if(from.year == to.year || from.year == to.year - 1 && from.month == to.month && from.day != to.day)
+  if(from.year == to.year || from.year == to.year - 1 && from.day != to.day)
     range = [`${from.humanizedMonth()} ${from.humanizedDay()}, ${from.year}`, `${to.humanizedMonth()} ${to.humanizedDay()}`];
+
+  if(from.year == to.year - 1 && from.month != to.month)
+    range = [`${from.humanizedMonth()} ${from.humanizedDay()}`, `${to.humanizedMonth()} ${to.humanizedDay()}`];
+
+  if(from.year == now.getUTCFullYear() && from.year == to.year)
+    range = [`${from.humanizedMonth()} ${from.humanizedDay()}`, `${to.humanizedDay()}`];
 
   if(from.year == to.year && from.month == to.month && from.day == to.day)
     range = [`${from.humanizedMonth()} ${from.humanizedDay()}, ${from.year}`];
-
-  if(from.year != to.year && from.year == to.year - 1 && from.month != to.month && from.day != to.day)
-    range = [`${from.humanizedMonth()} ${from.humanizedDay()}`, `${to.humanizedMonth()} ${to.humanizedDay()}`];
-
-  if(from.year == now.getUTCFullYear() && from.year == to.year && from.month == to.month && from.day != to.day)
-    range = [`${from.humanizedMonth()} ${from.humanizedDay()}`, `${to.humanizedDay()}`];
 
   return range;
 }
